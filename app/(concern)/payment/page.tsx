@@ -11,11 +11,11 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
 export const metadata: Metadata = {
-  title: "Login",
-  description: "Login to your account",
+  title: "PAyment",
+  description: "Payment page for MOELCI-II Bonifacio Branch",
 }
 
-export default function LoginPage() {
+export default function PaymentPage() {
   return (
     <div className="container flex h-screen w-screen flex-col items-center justify-center">
       <Link
@@ -36,12 +36,13 @@ export default function LoginPage() {
             Payment
           </h1>
           <p className="text-sm text-muted-foreground">
-            Enter you details below
+            For monthly payment of service please enter your account number
+            below
           </p>
         </div>
         <form>
           <div className="grid gap-8">
-            <div className="grid gap-1">
+            {/* <div className="grid gap-1">
               <Label className="sr-only" htmlFor="text">
                 Full Name
               </Label>
@@ -54,7 +55,7 @@ export default function LoginPage() {
                 autoComplete="text"
                 autoCorrect="off"
               />
-            </div>
+            </div> */}
             <div className="grid gap-1">
               <Label className="sr-only" htmlFor="text">
                 Account Number

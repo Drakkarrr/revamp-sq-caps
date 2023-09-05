@@ -4,6 +4,7 @@ import { env } from "@/env.mjs"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
+import Image from "next/image"
 
 async function getGitHubStars(): Promise<string | null> {
   try {
@@ -37,8 +38,15 @@ export default async function IndexPage() {
 
   return (
     <>
-      <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
+      <section className="space-y-6 pb-8 pt-2 md:pb-12 md:pt-10 lg:py-32">
         <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
+          <Image
+            src="/images/hero.png"
+            alt="MOELCI-II Logo"
+            width={155}
+            height={180}
+            className="rounded-md border bg-muted transition-colors"
+          />
           <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
             WELCOME TO MOELCI-II
           </h1>
@@ -50,7 +58,7 @@ export default async function IndexPage() {
               href="/purpose"
               className={cn(buttonVariants({ size: "lg" }))}
             >
-              Get Statrted
+              Proceed
             </Link>
           </div>
         </div>

@@ -89,12 +89,12 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               Payment
             </button>
           </Link>
-          <Link href="/reconnection" className={cn(buttonVariants())}>
+          <Link href="/installation" className={cn(buttonVariants())}>
             <button disabled={isLoading}>
               {isLoading && (
                 <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
               )}
-              Reconnection
+              Installation
             </button>
           </Link>
         </div>
