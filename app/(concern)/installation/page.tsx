@@ -11,11 +11,11 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
 export const metadata: Metadata = {
-  title: "PAyment",
-  description: "Payment page for MOELCI-II Bonifacio Branch",
+  title: "Reconnection",
+  description: "Reconnection page for MOELCI-II Bonifacio Branch",
 }
 
-export default function PaymentPage() {
+export default function ReconnectionPage() {
   return (
     <div className="container flex h-screen w-screen flex-col items-center justify-center">
       <Link
@@ -33,11 +33,11 @@ export default function PaymentPage() {
       <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
         <div className="flex flex-col space-y-2 text-center">
           <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-            Payment
+            Installation
           </h1>
           <p className="text-sm text-muted-foreground">
-            For monthly payment of service please enter your account number
-            below
+            For installation and reconnection of service please enter your
+            account number below
           </p>
         </div>
         <form>
