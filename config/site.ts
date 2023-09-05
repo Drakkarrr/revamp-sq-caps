@@ -1,13 +1,13 @@
 import { SiteConfig } from "types"
 
 export const siteConfig: SiteConfig = {
-  name: "Taxonomy",
+  name: "Smart Queue",
   description:
-    "An open source application built using the new router, server components and everything new in Next.js 13.",
-  url: "https://tx.shadcn.com",
-  ogImage: "https://tx.shadcn.com/og.jpg",
+    "A smart queuing management system with intelligence for MOELCI-II, Bonifacio Branch.",
+  url: "https://smart-queue.vercel.app/",
+  ogImage: "https://static.thenounproject.com/png/5610074-200.png",
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/taxonomy",
+    twitter: "/",
+    github: "/",
   },
 }

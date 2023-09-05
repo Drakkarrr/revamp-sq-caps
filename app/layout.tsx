@@ -39,8 +39,8 @@ export const metadata = {
   ],
   authors: [
     {
-      name: "shadcn",
-      url: "https://shadcn.com",
+      name: "Drakkarrr",
+      url: "https://github.com/Drakkarrr",
     },
   ],
   creator: "shadcn",
