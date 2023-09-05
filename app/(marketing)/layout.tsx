@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { MainNav } from "@/components/main-nav"
 import { SiteFooter } from "@/components/site-footer"
+import { ModeToggle } from "@/components/mode-toggle"
 
 interface MarketingLayoutProps {
   children: React.ReactNode
@@ -18,7 +19,7 @@ export default async function MarketingLayout({
       <header className="container z-40 bg-background">
         <div className="flex h-20 items-center justify-between py-6">
           {/* <MainNav items={marketingConfig.mainNav} /> */}
-          <nav>
+          {/* <nav>
             <Link
               href="/login"
               className={cn(
@@ -26,9 +27,10 @@ export default async function MarketingLayout({
                 "px-4"
               )}
             >
-              Moelci-II-Bonifacio City
+              Smart Queue
             </Link>
-          </nav>
+          </nav> */}
+          <ModeToggle />
         </div>
       </header>
       <main className="flex-1">{children}</main>
