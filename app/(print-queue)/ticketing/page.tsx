@@ -1,48 +1,45 @@
-"use client"
-
-import Link from "next/link"
+// "use client"
 
 import { env } from "@/env.mjs"
-import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Button, buttonVariants } from "@/components/ui/button"
 import Image from "next/image"
 
-async function getGitHubStars(): Promise<string | null> {
-  try {
-    const response = await fetch(
-      "https://api.github.com/repos/shadcn/taxonomy",
-      {
-        headers: {
-          Accept: "application/vnd.github+json",
-          Authorization: `Bearer ${env.GITHUB_ACCESS_TOKEN}`,
-        },
-        next: {
-          revalidate: 60,
-        },
-      }
-    )
+// async function getGitHubStars(): Promise<string | null> {
+//   try {
+//     const response = await fetch(
+//       "https://api.github.com/repos/shadcn/taxonomy",
+//       {
+//         headers: {
+//           Accept: "application/vnd.github+json",
+//           Authorization: `Bearer ${env.GITHUB_ACCESS_TOKEN}`,
+//         },
+//         next: {
+//           revalidate: 60,
+//         },
+//       }
+//     )
 
-    if (!response?.ok) {
-      return null
-    }
+//     if (!response?.ok) {
+//       return null
+//     }
 
-    const json = await response.json()
+//     const json = await response.json()
 
-    return parseInt(json["stargazers_count"]).toLocaleString()
-  } catch (error) {
-    return null
-  }
-}
+//     return parseInt(json["stargazers_count"]).toLocaleString()
+//   } catch (error) {
+//     return null
+//   }
+// }
 
 export default async function TicketingPage() {
-  const stars = await getGitHubStars()
+  // const stars = await getGitHubStars()
 
-  const printQueueTicket = () => {
-    window.print()
+  // const printQueueTicket = () => {
+  //   window.print()
 
-    alert("Printed queue ticket!")
-  }
+  //   alert("Printed queue ticket!")
+  // }
 
   return (
     <>
@@ -55,18 +52,32 @@ export default async function TicketingPage() {
             height={180}
             className="rounded-md border bg-muted transition-colors"
           />
-          <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+          {/* <h1 className="text-3xl font-heading sm:text-5xl md:text-6xl lg:text-7xl">
             Generated ticket here
-          </h1>
+          </h1> */}
           {/* <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
-            Bonifacio Branch
+            Generated ticket here
           </h2> */}
-          <div className="space-x-4">
-            <Button
-              className={cn(buttonVariants({ size: "lg" }))}
-              onClick={printQueueTicket}
-            >
-              Print Queue number
+          <div className="mx-auto flex max-w-[58rem] flex-col space-y-4  text-left">
+            <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+              Generated ticket
+            </h2>
+            <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-3">
+              Account Number: 1234567890
+            </p>
+            <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-3">
+              Your number is: 80
+            </p>
+            <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-3">
+              You are expected to be serve at 5:42pm
+            </p>
+            <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-3">
+              To be serve tomorrow at 8:00am
+            </p>
+          </div>
+          <div className="mt-4 space-x-7 bg-black">
+            <Button className={cn(buttonVariants({ size: "lg" }))}>
+              Print Queue Number
             </Button>
           </div>
           {/* <div className="space-x-4">
