@@ -7,8 +7,8 @@ import { Icons } from "@/components/icons"
 import { UserAuthForm } from "@/components/user-auth-form"
 
 export const metadata: Metadata = {
-  title: "Login",
-  description: "Login to your account",
+  title: "Purpose of Visit",
+  description: "Provide purpose of visit for MOELCI-II Bonifacio Branch",
 }
 
 export default function PurposeOfVisit() {

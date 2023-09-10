@@ -11,11 +11,11 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
 export const metadata: Metadata = {
-  title: "Reconnection",
-  description: "Reconnection page for MOELCI-II Bonifacio Branch",
+  title: "Installation",
+  description: "Installation page for MOELCI-II Bonifacio Branch",
 }
 
-export default function ReconnectionPage() {
+export default function InstallationPage() {
   return (
     <div className="container flex h-screen w-screen flex-col items-center justify-center">
       <Link
@@ -36,7 +36,7 @@ export default function ReconnectionPage() {
             Installation
           </h1>
           <p className="text-sm text-muted-foreground">
-            For installation and reconnection of service please enter your
+            For installation and Installation of service please enter your
             account number below
           </p>
         </div>
