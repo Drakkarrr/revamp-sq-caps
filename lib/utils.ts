@@ -16,6 +16,25 @@ export function formatDate(input: string | number): string {
   })
 }
 
+// get current date
+export const getCurrentDate = () => {
+  const date = new Date()
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+
+  return `${year}-${month}-${day}`
+}
+
+export const getTimeInRealTime = () => {
+  const date = new Date()
+  const hours = date.getHours()
+  const minutes = date.getMinutes()
+  const seconds = date.getSeconds()
+
+  return `${hours}:${minutes}:${seconds}`
+}
+
 export function absoluteUrl(path: string) {
   return `${env.NEXT_PUBLIC_APP_URL}${path}`
 }

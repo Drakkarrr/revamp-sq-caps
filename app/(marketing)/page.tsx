@@ -1,40 +1,41 @@
 import Link from "next/link"
-
-import { env } from "@/env.mjs"
-import { siteConfig } from "@/config/site"
-import { cn } from "@/lib/utils"
+// import { env } from "@/env.mjs"
+// import { siteConfig } from "@/config/site"
+import { cn, getCurrentDate, getTimeInRealTime } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import Image from "next/image"
 
-async function getGitHubStars(): Promise<string | null> {
-  try {
-    const response = await fetch(
-      "https://api.github.com/repos/shadcn/taxonomy",
-      {
-        headers: {
-          Accept: "application/vnd.github+json",
-          Authorization: `Bearer ${env.GITHUB_ACCESS_TOKEN}`,
-        },
-        next: {
-          revalidate: 60,
-        },
-      }
-    )
+// async function getGitHubStars(): Promise<string | null> {
+//   try {
+//     const response = await fetch(
+//       "https://api.github.com/repos/shadcn/taxonomy",
+//       {
+//         headers: {
+//           Accept: "application/vnd.github+json",
+//           Authorization: `Bearer ${env.GITHUB_ACCESS_TOKEN}`,
+//         },
+//         next: {
+//           revalidate: 60,
+//         },
+//       }
+//     )
 
-    if (!response?.ok) {
-      return null
-    }
+//     if (!response?.ok) {
+//       return null
+//     }
 
-    const json = await response.json()
+//     const json = await response.json()
 
-    return parseInt(json["stargazers_count"]).toLocaleString()
-  } catch (error) {
-    return null
-  }
-}
+//     return parseInt(json["stargazers_count"]).toLocaleString()
+//   } catch (error) {
+//     return null
+//   }
+// }
 
 export default async function IndexPage() {
-  const stars = await getGitHubStars()
+  // const stars = await getGitHubStars()
+  // const currentDate: string = getCurrentDate()
+  // const currentTime = getTimeInRealTime()
 
   return (
     <>
@@ -60,6 +61,8 @@ export default async function IndexPage() {
             >
               Proceed
             </Link>
+            {/* <p>{currentDate}</p>
+            <p>{currentTime}</p> */}
           </div>
         </div>
       </section>
