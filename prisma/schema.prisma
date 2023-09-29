@@ -10,6 +10,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Transaction {
+  id            String   @id @default(cuid())
+  amount        Int
+  currency      String
+  description   String?
+  status        String
+  createdAt     DateTime @default(now()) @map(name: "created_at")
+  updatedAt     DateTime @default(now()) @map(name: "updated_at")
+  userId        String
+  stripeId      String?  @unique @map(name: "stripe_id")
+  stripeRefund  String?  @unique @map(name: "stripe_refund")
+  stripeBalance String?  @map(name: "stripe_balance")
+
+  @@map(name: "transactions")
+}
+
 model Account {
   id                String   @id @default(cuid())
   userId            String
