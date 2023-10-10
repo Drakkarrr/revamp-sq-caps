@@ -1,8 +1,13 @@
+"use client"
 import { cn } from "@/lib/utils"
 import { Button, buttonVariants } from "@/components/ui/button"
 import Image from "next/image"
 
 export default function TicketingPage() {
+  const handlePrint = () => {
+    window.print()
+  }
+
   return (
     <>
       <section className="space-y-6 pb-8 pt-2 md:pb-12 md:pt-10 lg:py-32">
@@ -22,17 +27,20 @@ export default function TicketingPage() {
               Account Number: 1234567890
             </p>
             <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-3">
-              Your number is: 80
+              Queue number: 80
             </p>
             <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-3">
-              You are expected to be serve at 5:42pm
+              Estimate waiting time: 4 minutes
             </p>
             <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-3">
-              To be serve tomorrow at 8:00am
+              You are expected to be serve at 3:42pm
             </p>
           </div>
           <div className="mt-4 space-x-7 bg-black">
-            <Button className={cn(buttonVariants({ size: "lg" }))}>
+            <Button
+              className={cn(buttonVariants({ size: "lg" }))}
+              onClick={handlePrint}
+            >
               Print Queue Number
             </Button>
           </div>
